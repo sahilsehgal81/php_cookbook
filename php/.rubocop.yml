@@ -1,0 +1,12 @@
+# inherit_from: .rubocop_todo.yml
+# Stylistic choices of this cookbook.
+
+AllCops:
+  Exclude:
+    - 'test/**/*' # ignore spec tests for now
+    - 'vendor/**/*' # ignore non-local files
+    - Guardfile
+
+# We like longer lines
+Metrics/LineLength:
+  Max: 500

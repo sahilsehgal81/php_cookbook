@@ -1,0 +1,16 @@
+DEPENDENCIES
+  build-essential
+  ohai
+  php
+    path: .
+    metadata: true
+  yum
+  yum-epel
+
+GRAPH
+  build-essential (2.2.3)
+  ohai (2.0.1)
+  php (0.7.0)
+  yum (3.6.1)
+  yum-epel (0.6.0)
+    yum (~> 3.0)

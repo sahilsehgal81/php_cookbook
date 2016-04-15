@@ -1,0 +1,26 @@
+---
+driver:
+  name: vagrant
+  customize:
+    memory: 4096
+    cpus: 2
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: centos-6.5
+
+suites:
+  - name: default
+    run_list:
+      - recipe[yum::default]
+      - recipe[yum-epel::default]
+      - recipe[build-essential::default]
+      - recipe[ohai::default]
+      - recipe[php::default]
+    attributes: {
+      "php" : {
+        "force_compile" : true,
+        "is_opcache": true
+      }
+    }
